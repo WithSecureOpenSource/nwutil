@@ -1170,17 +1170,12 @@ nwutil_url_t *nwutil_parse_url(const void *buffer,
 void nwutil_url_destroy(nwutil_url_t *url)
 {
     fsfree(url->scheme);
-    if (url->username)
-        fsfree(url->username);
-    if (url->password)
-        fsfree(url->password);
-    if (url->host)
-        fsfree(url->host);
+    fsfree(url->username);
+    fsfree(url->password);
+    fsfree(url->host);
     fsfree(url->path);
-    if (url->query)
-        fsfree(url->query);
-    if (url->fragment)
-        fsfree(url->fragment);
+    fsfree(url->query);
+    fsfree(url->fragment);
     fsfree(url);
 }
 
