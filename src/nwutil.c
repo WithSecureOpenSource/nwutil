@@ -33,7 +33,7 @@ static char *dict_look_up_string(CFDictionaryRef dict, CFStringRef key)
     CFIndex size =
         CFStringGetMaximumSizeForEncoding(length, kCFStringEncodingUTF8) + 1;
     char *s = malloc(size);
-    if (!CFStringGetCString(cf_s, host, size, kCFStringEncodingUTF8)) {
+    if (!CFStringGetCString(cf_s, s, size, kCFStringEncodingUTF8)) {
         free(s);
         return NULL;
     }
@@ -129,12 +129,9 @@ const char *nwutil_http_proxy_password(nwutil_http_proxy_settings_t *settings)
 
 void nwutil_release_http_proxy_settings(nwutil_http_proxy_settings_t *settings)
 {
-    if (settings->proxy_host)
-        free(settings->proxy_host);
-    if (settings->proxy_user)
-        free(settings->proxy_user);
-    if (settings->proxy_password)
-        free(settings->proxy_password);
+    free(settings->proxy_host);
+    free(settings->proxy_user);
+    free(settings->proxy_password);
     free(settings);
 }
 
