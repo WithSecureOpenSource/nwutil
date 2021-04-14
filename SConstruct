@@ -41,7 +41,7 @@ TARGET_FLAGS = {
 
 TARGET_FRAMEWORKS = {
     'freebsd_amd64': [],
-    'linux32': '-m32 ',
+    'linux32': [],
     'linux64': [],
     'openbsd_amd64': [],
     'darwin': ['CoreServices']
