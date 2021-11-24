@@ -45,6 +45,7 @@ def construct():
             CCFLAGS=TARGET_FLAGS[target_arch] + ccflags,
             CPPDEFINES=TARGET_DEFINES[target_arch],
             LINKFLAGS=TARGET_FLAGS[target_arch],
+            TARGET_FRAMEWORKS=TARGET_FRAMEWORKS[target_arch],
             tools=['default', 'textfile', 'fscomp'])
         fsenv.consider_environment_variables(arch_env)
         if target_arch == "darwin":
