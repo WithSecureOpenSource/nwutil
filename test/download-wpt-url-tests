@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
-import json
 import ipaddress
+import json
 import re
+
 import requests
 
 WPT_URL = "https://raw.githubusercontent.com/web-platform-tests/wpt/33e4ac09029c463ea6ee57d6f33477a9043e98e8/url/resources/urltestdata.json"
