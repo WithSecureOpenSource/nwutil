@@ -658,7 +658,6 @@ static void parse_special_authority(url_parser_t *parser, int c)
 
 static void parse_authority(url_parser_t *parser, int c)
 {
-    scheme_type_t scheme_type = parser->url->scheme_type;
     switch (c) {
         case '/':
         case '?':
